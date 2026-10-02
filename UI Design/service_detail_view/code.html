@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Service Detail View - DekatSini</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2463eb",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">location_on</span>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">DekatSini</h1>
+</div>
+<div class="hidden md:block">
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+<span class="material-symbols-outlined text-xl">search</span>
+</span>
+<input class="block w-64 pl-10 pr-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="Search services near you..."/>
+</div>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Providers</a>
+<div class="flex items-center gap-3 ml-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-blue-700 transition-colors">Login</button>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-sm text-slate-500 mb-6">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="hover:text-primary" href="#">Home Services</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-slate-900 dark:text-slate-100 font-medium">Professional AC Repair</span>
+</nav>
+<!-- Hero Section -->
+<div class="relative rounded-xl overflow-hidden mb-8 shadow-sm">
+<div class="h-80 w-full bg-cover bg-center" data-alt="Technician repairing a modern air conditioning unit" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGMOpqEVV6Fatqa06Dd-U4Jcz2CYSlt2U0DkdywP3QwsDRuzGr-lUACQpvsjBVASqtlQMSfesJDV9ks3GTEgSSMJUpt7DLLArDYGnzu6VrFCamShj0zatsaWYhOlUdZM591Vndm2D-zjkNWF5xb9rRHhnW_sD19M3hLzoSNBmZ5cO0g90yalYldo_v4MDoTX_jMr7kMYJGsY_IqWILi7gwwQxaiST55_JNRK64_TZTfQyyiVHoKQLPwbGbVy9-ZkaRH9zxODv_QhTF');"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Expert AC Repair &amp; Maintenance</h2>
+<div class="flex flex-wrap items-center gap-4 text-white/90">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 fill-1">star</span>
+<span class="font-bold">4.8</span>
+<span class="text-sm text-white/70">(120 reviews)</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-sm">Jakarta Selatan, Indonesia</span>
+</div>
+<span class="bg-primary/80 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold uppercase tracking-wider">Verified Professional</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 md:flex-none px-6 py-3 bg-white text-slate-900 font-bold rounded-lg hover:bg-slate-100 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">chat</span> Contact Now
+                    </button>
+<button class="flex-1 md:flex-none px-6 py-3 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">call</span> WhatsApp
+                    </button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Content -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Tabs Navigation -->
+<div class="border-b border-slate-200 dark:border-slate-800 flex gap-8">
+<button class="pb-4 border-b-2 border-primary text-primary font-bold text-sm">Description</button>
+<button class="pb-4 border-b-2 border-transparent text-slate-500 hover:text-slate-700 font-bold text-sm transition-colors">Portfolio</button>
+<button class="pb-4 border-b-2 border-transparent text-slate-500 hover:text-slate-700 font-bold text-sm transition-colors">Reviews</button>
+</div>
+<!-- Description Section -->
+<section class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<h3 class="text-xl font-bold mb-4">About This Service</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                        CoolAir Solutions provides top-tier air conditioning services including installation, routine maintenance, and emergency repairs for both residential and commercial properties in Jakarta Selatan. Our team of certified technicians ensures your cooling systems run at peak efficiency, saving you energy and money.
+                    </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<div>
+<p class="font-semibold text-sm">Quick Response</p>
+<p class="text-xs text-slate-500">Service guaranteed within 24 hours.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<div>
+<p class="font-semibold text-sm">Warranty Included</p>
+<p class="text-xs text-slate-500">3-month warranty on all spare parts.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<div>
+<p class="font-semibold text-sm">Certified Techs</p>
+<p class="text-xs text-slate-500">Fully licensed and background checked.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<div>
+<p class="font-semibold text-sm">Transparent Pricing</p>
+<p class="text-xs text-slate-500">No hidden costs or extra call-out fees.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Gallery -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-xl font-bold">Previous Work</h3>
+<a class="text-primary text-sm font-semibold hover:underline" href="#">View all photos</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="aspect-square rounded-lg bg-slate-200 dark:bg-slate-800 bg-cover bg-center overflow-hidden hover:opacity-90 transition-opacity cursor-pointer shadow-sm" data-alt="Close up of a cleaned AC filter" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDql35C5Ziv-kRIrVtGUunVIsmyGGvNu2JaDdQPH73WerKdc_2P1EAfE-T0rch_1fjCRa-K4t2sGTfa4rcKllZFFA3fEtT-7kpTDBAa1a16tPIimBQ2dgkC-YCsUB3OKHCZX_Fz1PHtTR2XS1W_3OciVp-l97g62mbJrM6rJ1iRki_aFC3fGBXfEjbnHxyvjfgX8eL6N00JBlvquDzISVTgBCKcGJdtxLllVtwK6r3SuWmUNSecT9thNMyTEpKJO8FaHM1lRbbdcj1Y');"></div>
+<div class="aspect-square rounded-lg bg-slate-200 dark:bg-slate-800 bg-cover bg-center overflow-hidden hover:opacity-90 transition-opacity cursor-pointer shadow-sm" data-alt="Installation of a new outdoor AC compressor unit" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_vTxv7DEUWzhsHyIg_XZASpVG3z2wZUeml5muNFb077Z7K8l1St1dx8EwqvJ4OrJp5lrqsk0iy3hyCKS1pLsosdP-sCUVpp3Rkjg4YiW-MKHnEVCfN0RBT3JoRYsUI8GsesAAbh6Pu1xiseV6J_nwL8fbFOZEmJxlirxq2QD-Lhh81-eHo0-UMIu6P3y3uBUb-AO_qd-54XV6JCvfQteN1v1FgLfvKCrjZ0UcdNcf7vE_CRFQuRvic12sj0gQtMVghHieQkDYm2oi');"></div>
+<div class="aspect-square rounded-lg bg-slate-200 dark:bg-slate-800 bg-cover bg-center overflow-hidden hover:opacity-90 transition-opacity cursor-pointer shadow-sm" data-alt="Technician measuring voltage on an AC control board" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBw_oeL_bq1TWw9BsE0QfFNUU5Ay7wNQKUzW-yj7wlBsPhuFYY4He0JO9MsEIfpzKe42uwAKMOnTvG7jduHGAD7oJRHqnS8p4CHOfZUzividzlxlR_5vBqOlfoGYjyUmwzDnmfDdh8NGfEsGf6WitBjPKEcxwoBtg1V9YHeFCP4c3EZzijRUNpwveSzS1jLq48sio-XZ_iMJECjulbAQAJyXUT4mUhZSWq6pQYdGUKjGHobP63RSVV0PiJvRZ-_dVrHBEGpJdyC8uRI');"></div>
+<div class="aspect-square rounded-lg bg-slate-200 dark:bg-slate-800 bg-cover bg-center overflow-hidden hover:opacity-90 transition-opacity cursor-pointer shadow-sm" data-alt="Residential living room with newly serviced AC" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAvKixyjyI2qQRIdLHh0Jc_cQThwKC-_knEWLfmwHrH0w_VXC2PuQzGpdfkt_Lx1YDHS5EubYwquRZXz-iD8SvvFmO4ekV10ttEJQaoiR9qTrM7FqFTXzAubQ_F3g5jZiBGsx3XM-EVH8DgdnOyqpBNsndxrRxFIpCNHkrtTr8XPCn9EWawwKNEc4l6dxkQfnEojEBNjQIuCjv6fimGJYEXhpdV5wmHr1HTisBX5Xi1igZaC3pYbv3fkPVg_c7U_lvmcQhn7RMUGSHC');"></div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-bold">Customer Reviews</h3>
+<button class="text-primary text-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">edit</span> Write a Review
+                        </button>
+</div>
+<div class="space-y-6">
+<div class="border-b border-slate-100 dark:border-slate-800 pb-6">
+<div class="flex items-center gap-4 mb-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">JD</div>
+<div>
+<p class="font-bold text-sm">John Doe</p>
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+</div>
+</div>
+<span class="ml-auto text-xs text-slate-400">2 days ago</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400">Excellent service! They arrived on time and fixed my leaking AC in less than an hour. Very professional and tidy work.</p>
+</div>
+<div class="border-b border-slate-100 dark:border-slate-800 pb-6">
+<div class="flex items-center gap-4 mb-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">AS</div>
+<div>
+<p class="font-bold text-sm">Anita Sari</p>
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+</div>
+<span class="ml-auto text-xs text-slate-400">1 week ago</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400">Fair pricing and helpful staff. Highly recommend for annual maintenance.</p>
+</div>
+</div>
+<button class="w-full mt-4 py-3 text-sm font-bold text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">Read More Reviews</button>
+</section>
+</div>
+<!-- Right Column: Sidebar -->
+<div class="space-y-6">
+<!-- Location & Contact Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
+<div class="h-40 bg-slate-200 dark:bg-slate-800 relative group overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Map view of Jakarta Selatan area" data-location="Jakarta Selatan" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGVNXjDwDy199qnpOshDBrufhAgk03ROsqtO-xkv-4YMBm8X41sZakrYRbGbeoZFOALd5a7sIEx6jG9m2yw9wJRGhsjIGUlJvgNLKb72_mSvBb3FgWPr31Icmua6CZ7kUW-7bS0Dp0T9x1UVTFKjpu8HSDMFQeVEKwHogZBrBKjkao714hWEHdPfr499tEjJBPHT8m7J_ZEv61vjrXyH3alGtAaXSyjoobbt-r_H9t7M6Piu1rtWTs-VIXTrGIOkLV9Ntp85qNxu8h');"></div>
+<div class="absolute inset-0 bg-slate-900/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl">location_on</span>
+</div>
+<button class="absolute bottom-2 right-2 bg-white/90 backdrop-blur shadow-sm px-2 py-1 rounded text-xs font-bold text-slate-900">View Map</button>
+</div>
+<div class="p-6">
+<h4 class="font-bold text-lg mb-4">Contact Info</h4>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<div>
+<p class="text-sm font-semibold">Opening Hours</p>
+<p class="text-xs text-slate-500">Mon - Sat, 08:00 AM - 06:00 PM</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">phone_iphone</span>
+<div>
+<p class="text-sm font-semibold">Phone Number</p>
+<p class="text-xs text-slate-500">+62 812-3456-7890</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">mail</span>
+<div>
+<p class="text-sm font-semibold">Email Address</p>
+<p class="text-xs text-slate-500">hello@coolairsolutions.id</p>
+</div>
+</li>
+</ul>
+<hr class="my-6 border-slate-100 dark:border-slate-800"/>
+<button class="w-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white py-3 rounded-lg font-bold hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">Request a Quote</button>
+</div>
+</div>
+<!-- Related Services -->
+<div>
+<h4 class="font-bold text-lg mb-4">Related Services</h4>
+<div class="space-y-4">
+<a class="flex gap-4 p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary transition-colors" href="#">
+<div class="w-20 h-20 rounded-lg bg-cover bg-center shrink-0" data-alt="Close up of a professional cleaning tool" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCErErUvX-6zTTZXt2eKanu3iFWTMcIhCwiNt8fsSZRoQY-pAvcDWYVc2qPPPLTXssr6KfZhxv4mfXbVGsL8wm_TM9O2xnHyEytsZ3hLKzGsbTZ4bF2sYjOxEDwP6rTE3s63txzE2cXj92xbtZM2kNLUdexLLPjmIHqriPMyiBe-fz1-9Q2X0L0glyOzCn51l9xorlhwUXnBqdcUYCAu42988yB3bOhWfVJWO2PUGy0PpHSmo7vJ9a0IGoOK3uUtU1DyB9VlsPs6iTt');"></div>
+<div class="flex flex-col justify-center">
+<p class="text-sm font-bold truncate">Premium AC Cleaning</p>
+<p class="text-xs text-slate-500">Fast &amp; Clean • 4.9 Rating</p>
+<p class="text-primary text-xs font-bold mt-1">From IDR 150k</p>
+</div>
+</a>
+<a class="flex gap-4 p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary transition-colors" href="#">
+<div class="w-20 h-20 rounded-lg bg-cover bg-center shrink-0" data-alt="Modern refrigerator electrical components" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCOBW9ucOXOmqvyKRKdniH8xY0ZTU62UpPd9t77-1dX_5tfYeezbVmCY2MHZBh4IUS74vPb7C4FxAPwqXfDnIp7Mxqqv6T05YKWd2Eh5doxcAIIDsrB69sxkZcLIv6QlTHSbbtdf2IltsFtUU3zeh6N85MpMetcFKlJRRQWPlXHHqAOpyct7ON8xu380X-9pWMnEkLItVi0rxO_fFHZZunf3AI8O_8tWJHa9Co02m2W5GWwhieNZoOTCAjYJCbQryRu291m2GiDO791');"></div>
+<div class="flex flex-col justify-center">
+<p class="text-sm font-bold truncate">Fridge Repair Expert</p>
+<p class="text-xs text-slate-500">Specialist • 4.7 Rating</p>
+<p class="text-primary text-xs font-bold mt-1">From IDR 200k</p>
+</div>
+</a>
+<a class="flex gap-4 p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary transition-colors" href="#">
+<div class="w-20 h-20 rounded-lg bg-cover bg-center shrink-0" data-alt="Washing machine drum maintenance" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFuxOIj74gaIBpcwV_Uz3kYOcL5_DrDD81_R05LRobZfoPBYWXFTnLNjERDt1vwX5XiWwgFg8qsM5L7I9C2B6GxLKoBh_FHAgaJZ-7ztHqf8RAzW24lO3BKkpBXfIHvZO5MMf8xBpe2WVP7urw4dMCbvibeqdE9slfgsJfwqYoMZqvCeGoOtwD6YpEWxeUWXIqES5KtKUuyisHZaK-6zShgSPhbvtJ2JCh5bx_IkTdEAmIiHjqScmh8lrv1gC_vMWDWFnICJfkPzdN');"></div>
+<div class="flex flex-col justify-center">
+<p class="text-sm font-bold truncate">Washing Machine Fix</p>
+<p class="text-xs text-slate-500">Home Service • 4.8 Rating</p>
+<p class="text-primary text-xs font-bold mt-1">From IDR 175k</p>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-12 py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 text-primary mb-4">
+<span class="material-symbols-outlined text-2xl font-bold">location_on</span>
+<h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">DekatSini</h1>
+</div>
+<p class="text-sm text-slate-500">Connecting you with the best local service providers in your neighborhood.</p>
+</div>
+<div>
+<h5 class="font-bold text-sm mb-4">Explore</h5>
+<ul class="space-y-2 text-sm text-slate-500">
+<li><a class="hover:text-primary" href="#">All Services</a></li>
+<li><a class="hover:text-primary" href="#">Featured Providers</a></li>
+<li><a class="hover:text-primary" href="#">Special Offers</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-sm mb-4">Company</h5>
+<ul class="space-y-2 text-sm text-slate-500">
+<li><a class="hover:text-primary" href="#">About Us</a></li>
+<li><a class="hover:text-primary" href="#">Contact Support</a></li>
+<li><a class="hover:text-primary" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-sm mb-4">Social</h5>
+<div class="flex gap-4">
+<a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">groups</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">camera</span>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 text-center text-xs text-slate-400">
+                © 2024 DekatSini Directory. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

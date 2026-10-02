@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DekatSini - Temukan Layanan Terbaik di Sekitarmu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#2463eb",
+                "background-light": "#f6f6f8",
+                "background-dark": "#111621",
+              },
+              fontFamily: {
+                "display": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .sticky-nav { position: sticky; top: 0; z-index: 50; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- Sticky Navbar -->
+<header class="sticky-nav bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+<span class="text-xl font-bold tracking-tight">DekatSini</span>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Explore</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Add Service</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Login</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-white px-5 py-2 rounded-xl text-sm font-bold hover:bg-blue-700 transition-all shadow-lg shadow-primary/20">
+                        Get Started
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+<div class="mb-12 lg:mb-0">
+<h1 class="text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-6">
+                            Temukan Layanan Terbaik di <span class="text-primary">Sekitarmu</span>
+</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-lg">
+                            Solusi cepat dan terpercaya untuk semua kebutuhan rumah tangga Anda, langsung dari penyedia jasa terdekat di lokasi Anda.
+                        </p>
+<!-- Search Bar -->
+<div class="flex p-2 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 max-w-xl">
+<div class="flex flex-1 items-center px-4 gap-2">
+<span class="material-symbols-outlined text-slate-400">search</span>
+<input class="w-full border-none focus:ring-0 bg-transparent text-sm md:text-base" placeholder="Cari layanan (misal: AC, Tukang Listrik)" type="text"/>
+</div>
+<button class="bg-primary text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition-colors shrink-0">
+                                Cari Sekarang
+                            </button>
+</div>
+<div class="mt-8 flex items-center gap-4 text-sm text-slate-500">
+<span>Populer:</span>
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full">Servis AC</span>
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full">Laundry</span>
+</div>
+</div>
+<div class="relative">
+<div class="rounded-xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+<img class="w-full h-[500px] object-cover" data-alt="Professional electrician working on house wiring" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOkNgiT-3tUm-EvgOeIYSkinCA4EaNGuOxiGyCMvOVmG2T47WEpcqIWMB86iWb0Yfr_80AQs5MxR7aT64IXjniPq6Y0Uv5yB1WFH_8E6_AOIOY1HsJKB-EkdZ9JivLplFq2tF9niW15uDlumNJlD25cdQmDKPLEEOJqnvC5b1tIdIi1XBFG62BTgF8lDrL6hkvObwV4H1xA7De4sR7gm5EQ3zGSqTMHrKXGsM6iCE2DpKMTW5JqOdVrfOq_yS1WUTkkqthCaEQspQf"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl flex items-center gap-3 border border-slate-100 dark:border-slate-700">
+<div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<p class="text-sm font-bold">100% Terverifikasi</p>
+<p class="text-xs text-slate-500">Penyedia Jasa Berlisensi</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Grid -->
+<section class="py-20 bg-white dark:bg-slate-900/50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="mb-12">
+<h2 class="text-3xl font-bold mb-2">Kategori Terpopuler</h2>
+<p class="text-slate-500">Pilih kategori layanan yang Anda butuhkan</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="group p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary transition-all cursor-pointer hover:shadow-lg bg-white dark:bg-slate-800">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<h3 class="font-bold mb-1">Listrik</h3>
+<p class="text-xs text-slate-500">Ahli kelistrikan rumah</p>
+</div>
+<div class="group p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary transition-all cursor-pointer hover:shadow-lg bg-white dark:bg-slate-800">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">ac_unit</span>
+</div>
+<h3 class="font-bold mb-1">Servis AC</h3>
+<p class="text-xs text-slate-500">Perbaikan &amp; cuci AC</p>
+</div>
+<div class="group p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary transition-all cursor-pointer hover:shadow-lg bg-white dark:bg-slate-800">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">local_laundry_service</span>
+</div>
+<h3 class="font-bold mb-1">Laundry</h3>
+<p class="text-xs text-slate-500">Cuci &amp; setrika kiloan</p>
+</div>
+<div class="group p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary transition-all cursor-pointer hover:shadow-lg bg-white dark:bg-slate-800">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">cleaning_services</span>
+</div>
+<h3 class="font-bold mb-1">Kebersihan</h3>
+<p class="text-xs text-slate-500">Pembersihan rumah harian</p>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="py-24">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4">Cara Kerja DekatSini</h2>
+<p class="text-slate-500 max-w-2xl mx-auto">Tiga langkah mudah untuk mendapatkan layanan terbaik langsung ke depan pintu Anda.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-12 relative">
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full shadow-xl flex items-center justify-center mb-6 relative z-10 border border-slate-100 dark:border-slate-700">
+<span class="text-primary font-black text-2xl">1</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Cari Layanan</h3>
+<p class="text-slate-500 text-sm">Gunakan fitur pencarian untuk menemukan layanan yang Anda butuhkan di sekitar lokasi Anda.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full shadow-xl flex items-center justify-center mb-6 relative z-10 border border-slate-100 dark:border-slate-700">
+<span class="text-primary font-black text-2xl">2</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Pilih Penyedia</h3>
+<p class="text-slate-500 text-sm">Bandingkan harga, rating, dan ulasan dari penyedia jasa yang tersedia secara transparan.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full shadow-xl flex items-center justify-center mb-6 relative z-10 border border-slate-100 dark:border-slate-700">
+<span class="text-primary font-black text-2xl">3</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Selesaikan Pekerjaan</h3>
+<p class="text-slate-500 text-sm">Lakukan pemesanan, konfirmasi waktu, dan bayar setelah pekerjaan selesai dengan puas.</p>
+</div>
+<!-- Connector lines for desktop -->
+<div class="hidden md:block absolute top-8 left-[20%] right-[20%] h-0.5 bg-slate-200 dark:bg-slate-800 -z-0"></div>
+</div>
+</div>
+</section>
+<!-- Featured Services -->
+<section class="py-20 bg-white dark:bg-slate-900/50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-3xl font-bold mb-2">Layanan Unggulan</h2>
+<p class="text-slate-500">Penyedia jasa dengan rating tertinggi minggu ini</p>
+</div>
+<a class="text-primary font-bold hover:underline flex items-center gap-1" href="#">
+                        Lihat Semua <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Service Card 1 -->
+<div class="bg-background-light dark:bg-slate-800 rounded-xl overflow-hidden group shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cleaning service professional in blue uniform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbZfgXuABiCco9fNIxbtTnt9bxwd08NlH4GC8_I3KWDlZFddio8RMLpsCcdLfUshrTRSWcpb-ZPPhHeZ5ffIOvRHp_VpWrX19bHTCahLaXgOV1qn8dXX8gefsvrXJcWgLT4ZHRtEDY2CenuuUynZioZ21CskuSPBrcGmkik6T1nTNBxB10ai1WRRDrB1Kssj3_2pQ-JHS7LXxXvlWkddiL4HBOqAGS8F6L__p85570QxG7-dG4n2CGInFmOX_Y-Tem5sQfXWQbEj6g"/>
+<div class="absolute top-4 right-4 bg-white/90 dark:bg-slate-900/90 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span> 4.9 (120+)
+                            </div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg">Pembersihan Rumah Total</h3>
+<span class="text-primary font-bold">Rp 150rb</span>
+</div>
+<p class="text-sm text-slate-500 mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> Jakarta Selatan
+                            </p>
+<div class="flex items-center gap-3 border-t border-slate-200 dark:border-slate-700 pt-4 mt-2">
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Profile picture of service provider" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhTph4LMAxY5z3LiwzF30UTjp0r2-hfCHc4JWa3UbDy4rN47aHwqPBdqO5z3gBid2xcockScgJiXfFn1KmIn4TvKIRaux3dv76VvXfbaBxq20rlLIaX9bjO9HsdziZWBblZKUVUVnEDAqr2d0OYvko7SU-IaxPdvkt-X_wxfvgW_IjggGKiSw1StoQuCsCLKE_whmtg__Dy1U5VfrPECFAUBs2LPdAa7RFvr3veI1gfwdJZ3s1zrJwu3mOhhbQd6X1G3hx_vD3_EkC"/>
+</div>
+<span class="text-sm font-medium">Budi Santoso</span>
+</div>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-background-light dark:bg-slate-800 rounded-xl overflow-hidden group shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="AC maintenance and repair service" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXmDrJ1CP1z9phPzaWKx-Q41LXTi5NRrRQFvGIdqE3orqCqoV5k-RtlKTInUZQEE-mYt58MFI3POje75l_J05wNghv291QecQBsR63yX9J3E9LZHryRexD1xo7AKNp7HTyBeasCFYgmG0PEjKttGSiKJnxPr4dmSlT2pnbdhPu0hfmXRymGvYaQ0he1J7p8YHVVdKI_v5xQN8hJV8aoMdZoqeUCldwzFOVl82yA5OqFTcIzDmR9LbX_vrwHLLJekP_aJchKD-S-qSm"/>
+<div class="absolute top-4 right-4 bg-white/90 dark:bg-slate-900/90 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span> 4.8 (85)
+                            </div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg">Cuci &amp; Isi Freon AC</h3>
+<span class="text-primary font-bold">Rp 200rb</span>
+</div>
+<p class="text-sm text-slate-500 mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> Tangerang Kota
+                            </p>
+<div class="flex items-center gap-3 border-t border-slate-200 dark:border-slate-700 pt-4 mt-2">
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Profile picture of technician" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxHFbUAaIqV7dzuy1m6-wJVJP-Uyr393z8-S_LEc2XDc2FRvQQFLfD3Otwt1zC_Jt8gut3Z9Zt3fbhEKk20Gl-atq5uNj4mx3N28OfLC5JNc0unCS2d--MI1CLkbjvWsv8LjIEiGL9RKk5-aNuSkAHYZ5UeMxhzHWAkTRF0J3-pqzX9w4XHzJ81evQkzvirzpbUIoEzo4oCXeQTSZSh03WoQ6h275RVrYhfKcyFf-VdCoXlrFjelJi9K3AeIIZ5kbRQDNhkHHIPlDi"/>
+</div>
+<span class="text-sm font-medium">Siti Aminah</span>
+</div>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-background-light dark:bg-slate-800 rounded-xl overflow-hidden group shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Electrical repair toolkit and handyman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBWHfV1V4qLEdwmdCz79WO08kPwokBVxmCKfb_j4pAPSg1nqpa4jLRUYrG1JWgGvJIxcgWGSDkFPQbEGtc4-mz3AZS3LpFDO2zEmw2p3dsNq0VkSFcBvnp0MEEFaucjLD6dFb9gh6Au4HiMeHZ8qBrZX9a7kXF79Uh0yYfSXcKybucX359bGNP3AdozRLcN4C727wwlOz4GvA5DedrdU7nFleVa4ROD0PPMgSAeIGMOquX0s2B8qP1VEDeopUn0OtjjMlLXzBbZUx4"/>
+<div class="absolute top-4 right-4 bg-white/90 dark:bg-slate-900/90 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span> 5.0 (42)
+                            </div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg">Instalasi Listrik Baru</h3>
+<span class="text-primary font-bold">Rp 350rb</span>
+</div>
+<p class="text-sm text-slate-500 mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> Jakarta Barat
+                            </p>
+<div class="flex items-center gap-3 border-t border-slate-200 dark:border-slate-700 pt-4 mt-2">
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Profile picture of electrician" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFqGhfUZuRd4Oo_yBrxPj9FXnS3ATPilsycANitiIJ95MxS_FTu9smQc6PSi5V2TSrUl92Wg0LAVyVH52wNa8AsjZY4rJaVBQHpoXWVH4CU4UJO86xh1gQh0SIUpi4UssWdV9qqGlHQkka3tR0pRpYmrzR0CN07kuiE8rvg87OJoGHz1feXv8BbvFUEmDdTmXQAbil4RXfhgPmlAdudVWBraBnyuSs-RMfKjdcDgCESqn-XjT8rLKg3kwdKNRecamI6W2IOYzV0uol"/>
+</div>
+<span class="text-sm font-medium">Andi Wijaya</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Provider Section -->
+<section class="py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-primary rounded-[2rem] p-8 lg:p-16 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-white/10 -skew-x-12 translate-x-1/2"></div>
+<div class="relative z-10 lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+<div>
+<h2 class="text-3xl lg:text-4xl font-black text-white mb-6 leading-tight">
+                                Punya Keahlian? Bergabunglah sebagai Penyedia Jasa!
+                            </h2>
+<p class="text-blue-100 mb-10 text-lg">
+                                Tingkatkan penghasilan Anda dengan menjangkau lebih banyak pelanggan di sekitar Anda melalui platform DekatSini.
+                            </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-white text-primary px-8 py-4 rounded-xl font-black hover:bg-blue-50 transition-colors">
+                                    Daftar Sekarang
+                                </button>
+<button class="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-colors">
+                                    Pelajari Lebih Lanjut
+                                </button>
+</div>
+</div>
+<div class="hidden lg:block">
+<div class="bg-white/20 backdrop-blur-md p-8 rounded-2xl border border-white/30">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<p class="text-white font-bold">Naikkan pendapatan hingga 40%</p>
+</div>
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<p class="text-white font-bold">Atur jadwal kerja Anda sendiri</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<p class="text-white font-bold">Pembayaran aman dan cepat</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+<div class="col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+<span class="text-xl font-bold tracking-tight">DekatSini</span>
+</div>
+<p class="text-slate-500 text-sm max-w-xs mb-6">
+                        Platform direktori layanan lokal nomor satu yang menghubungkan Anda dengan ahli di lingkungan sekitar secara instan.
+                    </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center text-slate-600 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center text-slate-600 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">camera</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6">Perusahaan</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary" href="#">Tentang Kami</a></li>
+<li><a class="hover:text-primary" href="#">Karir</a></li>
+<li><a class="hover:text-primary" href="#">Blog</a></li>
+<li><a class="hover:text-primary" href="#">Hubungi Kami</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Layanan</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary" href="#">Kelistrikan</a></li>
+<li><a class="hover:text-primary" href="#">Servis AC</a></li>
+<li><a class="hover:text-primary" href="#">Pembersihan</a></li>
+<li><a class="hover:text-primary" href="#">Laundry</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Bantuan</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary" href="#">Pusat Bantuan</a></li>
+<li><a class="hover:text-primary" href="#">Syarat &amp; Ketentuan</a></li>
+<li><a class="hover:text-primary" href="#">Kebijakan Privasi</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:row justify-between items-center gap-4">
+<p class="text-xs text-slate-500">© 2024 DekatSini. Hak Cipta Dilindungi.</p>
+<div class="flex gap-6">
+<img class="h-6 opacity-50 grayscale" data-alt="Mastercard payment icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp7YMBpJmzNqbqjw4IFctkp0i_V8Yv-qG7SahLgKtydOiPX259bCjtmKAU_a3SAlr9vLtBoMqUd3AzE8WyVmRqTcweIVt8pG36HJFGAbm6ezSPL4vcTBOVdpj22wFb90bSh9bOtJnC4N9PEykAmOe1iCZuO3mE3WTHEzeAugjnprb01dkjh-ACvIf_5jOQ-8OF4PtCNYO1umTxjmtTLf7sDnhKyl3vMrstSrRkLlUIfzH0lJN-Migd9JmcCWJEQZkpjX32CvFUv0ME"/>
+<img class="h-6 opacity-50 grayscale" data-alt="Visa payment icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6SdPteOwlYdSikTsSQFStb6Dx1HIFcDyVEYZvzsteAQDtIbeTbTkcQwjneG36ieg5eBJLpD6mJWYKD03VnSxsChF5s3Uej-6xcNfcaunlNF_9FMj-M72xc51BBDYyeR4oSX5D0la7HlSN5EuejNQlnkZw9c50Y8JMy2HxeR5jgsgahdo6JdIxWCCLB_reeT_qd0fRJ7guI2JePosBb7RMOh1KjGMn2g1dDIZv2R-z8yeKbts87dermPWhjQ-z2IajcH4NZQsFfICB"/>
+</div>
+</div>
+</div>
+</footer>
+
+```</body></html>

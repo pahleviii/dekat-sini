@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Service Directory Listings | DekatSini</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2463eb",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .filled-icon { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white dark:bg-slate-900 px-6 lg:px-40 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">explore</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">DekatSini</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary pb-0.5" href="#">Categories</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Nearby</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Support</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 lg:gap-8">
+<label class="hidden sm:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-primary/5 dark:bg-primary/10 border border-primary/10">
+<div class="text-slate-400 flex items-center justify-center pl-3">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:outline-0 focus:ring-0 text-sm font-normal px-2" placeholder="Search services..." value=""/>
+</div>
+</label>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold transition-all hover:bg-primary/90">
+                        Login
+                    </button>
+<div class="bg-primary/20 flex items-center justify-center rounded-full size-10 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnUCwySO57s9-LzCkxrFECWhvE-T3GrigL6g7Vld4ceNPPHLq-pRRcQFCupd1d9s5PrDNexAW0EHkJzDbZrpWTmIMj0SKg-JpgMHG-TKQvtxmplIef6Kpf42Rok-CO92mlw8ZN_uTFeJKmc5gpphXTFpAxhUSzkDhqvsP-bJtGEUka4ZxdqEeb0iVdnA9Dt715PG5QA83wS3GLUDuClMJDnJ0CsNw2T10871oRia9UC4xiItlLnz-uW0y7yGarRFwyk_nFt6vk3i7d"/>
+</div>
+</div>
+</header>
+<div class="flex w-full max-w-[1440px] mx-auto px-4 lg:px-40 py-8 gap-8">
+<aside class="hidden lg:flex flex-col w-64 shrink-0 gap-8">
+<div class="flex flex-col gap-2">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold">Filters</h3>
+<p class="text-slate-500 text-xs font-normal">Refine your results</p>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-3">
+<h4 class="text-sm font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">category</span>
+                                Category
+                            </h4>
+<div class="flex flex-col gap-2 pl-1">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Home Maintenance</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<span class="text-sm text-slate-900 dark:text-slate-100 font-medium">Auto Services</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Pet Care</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Health &amp; Wellness</span>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-sm font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">star</span>
+                                Minimum Rating
+                            </h4>
+<div class="flex flex-col gap-2 pl-1">
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="text-primary focus:ring-primary border-slate-300" name="rating" type="radio"/>
+<div class="flex text-amber-400"><span class="material-symbols-outlined filled-icon text-sm">star</span><span class="material-symbols-outlined filled-icon text-sm">star</span><span class="material-symbols-outlined filled-icon text-sm">star</span><span class="material-symbols-outlined filled-icon text-sm">star</span><span class="material-symbols-outlined filled-icon text-sm">star</span></div>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="text-primary focus:ring-primary border-slate-300" name="rating" type="radio"/>
+<span class="text-sm text-slate-600 dark:text-slate-400">4 Stars &amp; Up</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="text-primary focus:ring-primary border-slate-300" name="rating" type="radio"/>
+<span class="text-sm text-slate-600 dark:text-slate-400">3 Stars &amp; Up</span>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-sm font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">location_on</span>
+                                Distance
+                            </h4>
+<div class="px-2">
+<input class="w-full h-1.5 bg-primary/20 rounded-lg appearance-none cursor-pointer accent-primary" type="range"/>
+<div class="flex justify-between text-[10px] text-slate-500 mt-2">
+<span>Nearby</span>
+<span>20 km</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+<div class="flex flex-col">
+<h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Top Service Providers</h1>
+<p class="text-slate-500 text-sm">Found 124 services in your area</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-sm text-slate-500">Sort by:</span>
+<select class="bg-white dark:bg-slate-800 border-primary/10 rounded-lg text-sm focus:ring-primary focus:border-primary">
+<option>Recommended</option>
+<option>Top Rated</option>
+<option>Distance</option>
+<option>Newest</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<div class="flex flex-col bg-white dark:bg-slate-900 rounded-xl border border-primary/5 shadow-sm overflow-hidden hover:shadow-md transition-shadow group">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Electrician working on electrical panel box" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnajssjrfvsQNozWFZGBR8W0t6c9Yn94t1fvIa2d_CiCesQKhfEd5gRBI8RWsRaA5kabsPsIucRKvoJnrHGIIwzcYVcLD2eOfBJn4j4_R0FiEJPlb6tJMe3v6hY7jQkilUOw35xrlzMBFXzusz2GHSiqZwPHUxbIxDNP-lM5r3uVu6B2H0yUT6ub02PX8VbIKyytH-WL6H_uIqasOKpGeEEDy_sYRHrlxweLUqNBv0JJPobjnCPUMOu-dIMwLz01MEwHvvu3ODGQVW"/>
+<span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Home Repair</span>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">Elite Electrical Solutions</h3>
+<div class="flex items-center gap-1 text-amber-500">
+<span class="material-symbols-outlined filled-icon text-lg">star</span>
+<span class="text-sm font-bold">4.9</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-xs">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Jakarta Selatan • 2.4 km away</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mt-2">
+                                    Expert residential and commercial electrical services. Licensed technicians available for emergency repairs.
+                                </p>
+<button class="mt-4 w-full bg-primary text-white py-2.5 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+                                    View Details
+                                </button>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-slate-900 rounded-xl border border-primary/5 shadow-sm overflow-hidden hover:shadow-md transition-shadow group">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Car mechanic inspecting vehicle engine" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNtgaLYVAs3U7gJlt5f2oUOkRE5wfldqirSE2Xn3ZEL2aHYOnVsZ_jndCDBRPMlciwRqiduiZEPT7LppgJxgaiQvBDx3onUngETviXPcazoudtlp2Ds_ZEjDKMs8p3tMQmDmSnk_g5cn1tBnihhc7ncQAyJP26ZI2JBz7uzMt0jPykwIzw9Kcz5sm4c1ZtozVFyuZ2csGi8P2l_qzCjaA-Ub40SzLS0jeWkSkfqA3dT2OySafak-B49_4EgDMTc2CB9VVK49cNrEIz"/>
+<span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Auto Care</span>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">Pristine Auto Detailing</h3>
+<div class="flex items-center gap-1 text-amber-500">
+<span class="material-symbols-outlined filled-icon text-lg">star</span>
+<span class="text-sm font-bold">4.8</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-xs">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Tangerang • 5.1 km away</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mt-2">
+                                    Full interior and exterior mobile detailing. We bring the showroom shine to your doorstep.
+                                </p>
+<button class="mt-4 w-full bg-primary text-white py-2.5 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+                                    View Details
+                                </button>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-slate-900 rounded-xl border border-primary/5 shadow-sm overflow-hidden hover:shadow-md transition-shadow group">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Person cleaning kitchen countertops" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfAYsZry1jh2PRz9Gpjdt3HLcnYrAXbU3POpL-uFH5X7K2w6SG2pgcMKWMNSDtA6ClRvKvP9DEJ0l-zW3CBB6iOACSKBCqtpvJBuFhMTsQB2KYz0aIyGPvcp8ta6XJSOvut7HT6porMqbpcHcBIOK7ZhfHevSDqfMviZt1ecD5PecW1bV61hXQ1KprKd3lYm6CoDyVg3TvIuwKGiYGqJRWAqKm4aD0LrhEtS9dfiXAUkho5KbncU6mrikhueWC5_sabzJiKyOpjfas"/>
+<span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Cleaning</span>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">Sparkle Home Services</h3>
+<div class="flex items-center gap-1 text-amber-500">
+<span class="material-symbols-outlined filled-icon text-lg">star</span>
+<span class="text-sm font-bold">4.7</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-xs">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Jakarta Pusat • 1.2 km away</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mt-2">
+                                    Eco-friendly house cleaning services. Weekly, bi-weekly, or one-time deep cleaning options.
+                                </p>
+<button class="mt-4 w-full bg-primary text-white py-2.5 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+                                    View Details
+                                </button>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-slate-900 rounded-xl border border-primary/5 shadow-sm overflow-hidden hover:shadow-md transition-shadow group">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Plumber fixing kitchen sink pipe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSWHN4Rm-i7ZyRZjcKDJSGsd2wzrg-7Gsr9jr-pV-dzz56Z5koUvY3PAyZquxQ8cwZU3JtFT7YcGDvf-5TsskAwreOLfAwevgka-kb0RWlOipkjXqkSpo0XpW-v8HsqZYVciKYfx5Wws11zJucuA3wP3-0M0fiNQune-40htKnuerFmJx1rv_xEy4JbhWyuMUosmD5CNC-rQga-FMHgWV-v4GJW9kFfDH5mGi9dz5VB-PjzxAJJDn22cR2W3WJk4X4bSacfdQB38IL"/>
+<span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Plumbing</span>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">Swift Flow Plumbing</h3>
+<div class="flex items-center gap-1 text-amber-500">
+<span class="material-symbols-outlined filled-icon text-lg">star</span>
+<span class="text-sm font-bold">4.9</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-xs">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Bekasi • 8.7 km away</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mt-2">
+                                    Reliable plumbing services for leaks, clogs, and new installations. Available 24/7 for emergencies.
+                                </p>
+<button class="mt-4 w-full bg-primary text-white py-2.5 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+                                    View Details
+                                </button>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-slate-900 rounded-xl border border-primary/5 shadow-sm overflow-hidden hover:shadow-md transition-shadow group">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Veterinarian examining small puppy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpc3Dpyw4-uuOtvKhdXvrZa14BuAUSM7WX1Cqm_VWTqzPqlOVv5BnThUKKpWxF_yPw7GA3y205XQWTSGluWmXiWXahnqUd2Ea_KQtGYZyeM11Arku0ZmEEVBOmkmKzUwjhkEs69TfMknrrcmmszsQHXJ1Y4fIk8lhOboLn-84treTDFkG13uuHOqIaD2ocWpHglSWOloIpsCXq4hbbizHerp2FQFoE8IDHglvUk6D3VgRNEYtGIHQu-PymBMho_mmoMHYhaYg_gvdM"/>
+<span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Pet Care</span>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">Happy Tails Veterinary</h3>
+<div class="flex items-center gap-1 text-amber-500">
+<span class="material-symbols-outlined filled-icon text-lg">star</span>
+<span class="text-sm font-bold">4.6</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-xs">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Depok • 6.2 km away</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mt-2">
+                                    Professional pet healthcare, vaccinations, and grooming. Loving care for your furry friends.
+                                </p>
+<button class="mt-4 w-full bg-primary text-white py-2.5 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+                                    View Details
+                                </button>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-slate-900 rounded-xl border border-primary/5 shadow-sm overflow-hidden hover:shadow-md transition-shadow group">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Yoga instructor leading a class" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNkS-SaM3yw-AZfstm8Zt6XONBCyI85y4nKZ1uqQjsnrMGLtbaV2dfjQ5_simqlQXf2ohEIvag6EvqD_8gqqhrycuG4ooBpoeZoqx47cE_x-hHIPok6-MMBdsmAaWory04xXoaxTUN5_agpbOgIHi-a-p119nY_oMjC8poXzUJNNdp9BUWjupxIjk3Kix32YbZdrUXkMbqgqnz5LRg6KBPecic0Q33n7-TSSfZCwVjn0xNwWuryDZvCLztz8sgszv76jitrW3Lk_5K"/>
+<span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Wellness</span>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">Zenith Yoga Studio</h3>
+<div class="flex items-center gap-1 text-amber-500">
+<span class="material-symbols-outlined filled-icon text-lg">star</span>
+<span class="text-sm font-bold">5.0</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-xs">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Jakarta Barat • 3.8 km away</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mt-2">
+                                    Mindfulness and physical fitness through expert-led yoga sessions for all levels.
+                                </p>
+<button class="mt-4 w-full bg-primary text-white py-2.5 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+                                    View Details
+                                </button>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center items-center gap-2">
+<button class="flex items-center justify-center size-10 rounded-lg border border-primary/10 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="size-10 rounded-lg bg-primary text-white font-bold">1</button>
+<button class="size-10 rounded-lg border border-primary/10 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all font-bold">2</button>
+<button class="size-10 rounded-lg border border-primary/10 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all font-bold">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="size-10 rounded-lg border border-primary/10 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all font-bold">12</button>
+<button class="flex items-center justify-center size-10 rounded-lg border border-primary/10 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+</div>
+<footer class="mt-auto border-t border-primary/10 bg-white dark:bg-slate-900 py-10">
+<div class="max-w-[1440px] mx-auto px-4 lg:px-40 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 text-primary mb-4">
+<span class="material-symbols-outlined text-2xl font-bold">explore</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold">DekatSini</h2>
+</div>
+<p class="text-sm text-slate-500">The most trusted local service directory in your city. Connecting you with verified professionals instantly.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Explore</h4>
+<ul class="text-sm text-slate-500 space-y-2">
+<li><a class="hover:text-primary" href="#">Categories</a></li>
+<li><a class="hover:text-primary" href="#">Top Rated</a></li>
+<li><a class="hover:text-primary" href="#">New Listings</a></li>
+<li><a class="hover:text-primary" href="#">Featured Providers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">For Providers</h4>
+<ul class="text-sm text-slate-500 space-y-2">
+<li><a class="hover:text-primary" href="#">Register Service</a></li>
+<li><a class="hover:text-primary" href="#">Business Hub</a></li>
+<li><a class="hover:text-primary" href="#">Pricing Plans</a></li>
+<li><a class="hover:text-primary" href="#">Success Stories</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Stay Updated</h4>
+<div class="flex gap-2 mb-4">
+<input class="flex-1 rounded-lg border-primary/10 bg-primary/5 text-sm focus:ring-primary focus:border-primary" placeholder="Email address" type="email"/>
+<button class="bg-primary text-white p-2 rounded-lg">
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-primary">public</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-primary">share</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-primary">chat</span>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-4 lg:px-40 mt-10 pt-6 border-t border-primary/5 text-center text-xs text-slate-400">
+                    © 2024 DekatSini Inc. All rights reserved.
+                </div>
+</footer>
+</div>
+</div>
+</body></html>
