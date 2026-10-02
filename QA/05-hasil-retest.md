@@ -15,6 +15,9 @@
 | R4 | 2026-10-02 | Regression setelah fix BUG-018 (view `index.blade`) | 89 | **89** | 0 | 0 | Tidak ada regresi |
 | M1 | 2026-10-02 | UAT manual E2E (TC-G01…G05) | 5 | **5** | 0 | 0 | 1 temuan (BUG-018) → fix → retest PASS |
 | V1 | 2026-10-02 | Verifikasi balasan handoff dev (review 18 fix, nav hamburger, CI, build) | 89 | **89** | 0 | 0 | Dijalankan QA 2× (pra & pasca `npm run build`); 1 temuan (BUG-019) → fix → PASS |
+| V2 | 2026-10-02 | Verifikasi push GitHub + CI dev (commit `442b41f` — `APP_LOCALE=id` di phpunit.xml) | 89 | **89** | 0 | 0 | Suite lokal hijau dgn phpunit.xml baru · **GitHub Actions run #2 SUCCESS (58s)** |
+| B1 | 2026-10-02 | Ukur performa Lighthouse mobile (home/services/detail) → fix render-blocking + font → ukur ulang | 3 halaman | **3/3 PASS** | 0 | 0 | LCP 2656/3314/2908 → **1518/1515/1653 ms**; skor 84/83/90 → **99/99/99**; regresi 89/89 (BUG-020) |
+| B2 | 2026-10-02 | Smoke lintas-browser Playwright (Chromium/Firefox/WebKit × 1280px/390px) | 60 cek | **60/60** | 0 | 0 | 0 error JS; 2 fail awal = race assertion QA (timing Alpine), diperbaiki di test — bukan defect aplikasi |
 
 **Angka pendukung:** R1 345 asersi → R3/R4 **388 asersi**, 0 failure. Baseline sebelum QA: 25/25 (61 asersi).
 Perintah: `php artisan test --compact` dari `app/` (DB `dekatsini_testing`, `RefreshDatabase`).
@@ -44,6 +47,7 @@ Perintah: `php artisan test --compact` dari `app/` (DB `dekatsini_testing`, `Ref
 | BUG-017 | TC-F06 | FAIL (lead non-aktif diterima) | R2 PASS | ✅ CLOSED |
 | BUG-018 | TC-G05 | M1 FAIL (filter 390px tak terjangkau) | fix → **M1 PASS** + **R4 89/89** | ✅ CLOSED |
 | BUG-019 | — (review) | n/a — temuan baru di V1 (aset build stale) | fix `npm run build` → **V1 PASS** (89/89 + verifikasi visual desktop & 390px) | ✅ CLOSED |
+| BUG-020 | — (ukuran B1) | B1 FAIL: LCP 2656/3314/2908 ms > 2500 ms | fix render-blocking + font → **B1 PASS**: 1518/1515/1653 ms (3/3) + regresi 89/89 + peta jalan di 3 mesin | ✅ CLOSED |
 
 **Defek artefak test (bukan aplikasi):** TD-001 (TC-E08) → diperbaiki, R2+ PASS · TD-002 (TC-D07) → diperbaiki, R3+ PASS.
 
@@ -70,8 +74,9 @@ Catatan yang diamati (bukan bug — di luar syarat TC/PRD):
 ## 4. Status Akhir
 
 - **69/69 TC PASS** (64 otomatis + 5 manual) — status per baris di `QA/03-test-case.md`.
-- **19/19 bug aplikasi CLOSED** (termasuk BUG-019 dari verifikasi handoff), 0 bug terbuka.
-- **5/5 round otomatis hijau** (R3, R4, V1×2: 89/89, 388 asersi; V1 = verifikasi balasan handoff development).
+- **20/20 bug aplikasi CLOSED** (termasuk BUG-019 verifikasi handoff & BUG-020 ukuran B1), 0 bug terbuka.
+- **6/6 round otomatis/verifikasi hijau** (R3, R4, V1, V2, B1, B2; lihat tabel round).
+- Performa: **3/3 halaman LCP < 2,5 dtk** · Lintas-browser: **60/60 cek PASS** (Chromium/Firefox/WebKit).
 - Data uji sesi M1 dibersihkan dari DB dev (listing "Instalasi CCTV Rumah (Uji QA E2E)", lead & view uji) — artefak bukti tetap di `QA/evidence/`.
 - Detail hasil verifikasi atas balasan handoff dev (review fix, nav hamburger, CI, risiko) → `QA/06-laporan-kualitas.md` bagian 8.
 

@@ -4,10 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>@yield('title', 'DekatSini - Temukan Layanan Terbaik di Sekitarmu')</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 @vite(['resources/css/app.css', 'resources/js/app.js'])
-<style>body{font-family:'Inter',sans-serif}[x-cloak]{display:none!important}</style>
+<style>body{font-family:'Inter','Inter Fallback',sans-serif}@font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107.4%;ascent-override:90.4%;descent-override:22.5%;line-gap-override:0%}[x-cloak]{display:none!important}</style>
 @stack('head')
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -54,7 +56,6 @@
 <p><a href="#" class="hover:underline">Tentang</a> · <a href="#" class="hover:underline">Bantuan</a> · <a href="#" class="hover:underline">Privasi</a></p>
 </div>
 </footer>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 @stack('scripts')
 </body>
 </html>

@@ -10,6 +10,13 @@
 
 Sisa perbaikan Anda ada di **bagian A (WAJIB sebelum push pertama)** dan **bagian B (prasyarat rilis)**.
 
+> **STATUS EKSEKUSI (2026-10-02, diverifikasi QA — V2):**
+> - **A1 ✅ SELESAI** — Opsi A dipilih: repo root = workspace (`pahleviii/dekat-sini`), `.github` dipindah ke root, `app/.github` dihapus, `working-directory: app` konsisten, push bersih (`main` == `origin/main`).
+> - **A2 ✅ SELESAI** — step `Setup environment (.env + APP_KEY)` ada persis seperti rekomendasi dan **sukses di CI**.
+> - **A3 ✅ SELESAI** — run pertama `44f52dc` gagal (locale `en` → TC-C04/C05/C06/D07), dev memperbaiki dgn mengunci `APP_LOCALE=id` di `phpunit.xml` + menyelaraskan `.env.example` → **run #2 `442b41f` SUCCESS (58s, 12/12 step hijau)**. QA rerun lokal dgn phpunit.xml baru: **89/89 · 388 asersi**. Bukti: `QA/evidence/ci-run-success.png`.
+> - **B1 ✅ SELESAI (2026-10-02)** — Lighthouse mobile 3 halaman: home 2656→**1518 ms**, services 3314→**1515 ms**, detail 2908→**1653 ms** (skor 84/83/90 → **99/99/99**). Temuan **BUG-020** (render-blocking + font) diperbaiki QA; regresi 89/89; bukti `QA/evidence/lighthouse-*-before/after.json`.
+> - **B2 ⚠️ SEBAGIAN** — smoke otomatis Playwright **60/60 PASS** (Chromium/Firefox/WebKit × 1280px/390px, 0 error JS; bukti `QA/evidence/crossbrowser-smoke-results.json`). **Sisa manual:** Safari resmi (butuh Mac/device iOS) + device fisik nyata — ceklis di `QA/06` bagian 9.
+
 ---
 
 ### A. WAJIB — Workflow CI Anda belum akan hijau (3 masalah)

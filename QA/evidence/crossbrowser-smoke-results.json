@@ -1,0 +1,427 @@
+{
+ "total": 60,
+ "pass": 60,
+ "fail": 0,
+ "results": [
+  {
+   "engine": "chromium",
+   "viewport": "desktop1280",
+   "check": "home-load",
+   "ok": true,
+   "detail": "DekatSini - Temukan Layanan Terbaik di Sekitarmu"
+  },
+  {
+   "engine": "chromium",
+   "viewport": "desktop1280",
+   "check": "services-cards",
+   "ok": true,
+   "detail": "cards=12"
+  },
+  {
+   "engine": "chromium",
+   "viewport": "desktop1280",
+   "check": "sort-select",
+   "ok": true,
+   "detail": "selects=2"
+  },
+  {
+   "engine": "chromium",
+   "viewport": "desktop1280",
+   "check": "detail-h1",
+   "ok": true,
+   "detail": "Yoga Private di Rumah"
+  },
+  {
+   "engine": "chromium",
+   "viewport": "desktop1280",
+   "check": "detail-map",
+   "ok": true,
+   "detail": "{\"hasL\":true,\"cls\":true}"
+  },
+  {
+   "engine": "chromium",
+   "viewport": "desktop1280",
+   "check": "login-copy-id",
+   "ok": true,
+   "detail": " Email Kata Sandi Ingat saya Lupa kata sandi? Masuk atau Masuk dengan Google "
+  },
+  {
+   "engine": "chromium",
+   "viewport": "desktop1280",
+   "check": "hamburger-hidden-desktop",
+   "ok": true,
+   "detail": "visible=false"
+  },
+  {
+   "engine": "chromium",
+   "viewport": "desktop1280",
+   "check": "filter-btn-hidden-desktop",
+   "ok": true,
+   "detail": "visible=false"
+  },
+  {
+   "engine": "chromium",
+   "viewport": "desktop1280",
+   "check": "no-page-errors",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "engine": "chromium",
+   "viewport": "mobile390",
+   "check": "home-load",
+   "ok": true,
+   "detail": "DekatSini - Temukan Layanan Terbaik di Sekitarmu"
+  },
+  {
+   "engine": "chromium",
+   "viewport": "mobile390",
+   "check": "services-cards",
+   "ok": true,
+   "detail": "cards=12"
+  },
+  {
+   "engine": "chromium",
+   "viewport": "mobile390",
+   "check": "sort-select",
+   "ok": true,
+   "detail": "selects=2"
+  },
+  {
+   "engine": "chromium",
+   "viewport": "mobile390",
+   "check": "detail-h1",
+   "ok": true,
+   "detail": "Yoga Private di Rumah"
+  },
+  {
+   "engine": "chromium",
+   "viewport": "mobile390",
+   "check": "detail-map",
+   "ok": true,
+   "detail": "{\"hasL\":true,\"cls\":true}"
+  },
+  {
+   "engine": "chromium",
+   "viewport": "mobile390",
+   "check": "login-copy-id",
+   "ok": true,
+   "detail": " Email Kata Sandi Ingat saya Lupa kata sandi? Masuk atau Masuk dengan Google "
+  },
+  {
+   "engine": "chromium",
+   "viewport": "mobile390",
+   "check": "hamburger-visible",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "engine": "chromium",
+   "viewport": "mobile390",
+   "check": "hamburger-open",
+   "ok": true,
+   "detail": "links=4"
+  },
+  {
+   "engine": "chromium",
+   "viewport": "mobile390",
+   "check": "hamburger-close",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "engine": "chromium",
+   "viewport": "mobile390",
+   "check": "filter-toggle",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "engine": "chromium",
+   "viewport": "mobile390",
+   "check": "no-page-errors",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "engine": "firefox",
+   "viewport": "desktop1280",
+   "check": "home-load",
+   "ok": true,
+   "detail": "DekatSini - Temukan Layanan Terbaik di Sekitarmu"
+  },
+  {
+   "engine": "firefox",
+   "viewport": "desktop1280",
+   "check": "services-cards",
+   "ok": true,
+   "detail": "cards=12"
+  },
+  {
+   "engine": "firefox",
+   "viewport": "desktop1280",
+   "check": "sort-select",
+   "ok": true,
+   "detail": "selects=2"
+  },
+  {
+   "engine": "firefox",
+   "viewport": "desktop1280",
+   "check": "detail-h1",
+   "ok": true,
+   "detail": "Yoga Private di Rumah"
+  },
+  {
+   "engine": "firefox",
+   "viewport": "desktop1280",
+   "check": "detail-map",
+   "ok": true,
+   "detail": "{\"hasL\":true,\"cls\":true}"
+  },
+  {
+   "engine": "firefox",
+   "viewport": "desktop1280",
+   "check": "login-copy-id",
+   "ok": true,
+   "detail": " Email Kata Sandi Ingat saya Lupa kata sandi? Masuk atau Masuk dengan Google "
+  },
+  {
+   "engine": "firefox",
+   "viewport": "desktop1280",
+   "check": "hamburger-hidden-desktop",
+   "ok": true,
+   "detail": "visible=false"
+  },
+  {
+   "engine": "firefox",
+   "viewport": "desktop1280",
+   "check": "filter-btn-hidden-desktop",
+   "ok": true,
+   "detail": "visible=false"
+  },
+  {
+   "engine": "firefox",
+   "viewport": "desktop1280",
+   "check": "no-page-errors",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "engine": "firefox",
+   "viewport": "mobile390",
+   "check": "home-load",
+   "ok": true,
+   "detail": "DekatSini - Temukan Layanan Terbaik di Sekitarmu"
+  },
+  {
+   "engine": "firefox",
+   "viewport": "mobile390",
+   "check": "services-cards",
+   "ok": true,
+   "detail": "cards=12"
+  },
+  {
+   "engine": "firefox",
+   "viewport": "mobile390",
+   "check": "sort-select",
+   "ok": true,
+   "detail": "selects=2"
+  },
+  {
+   "engine": "firefox",
+   "viewport": "mobile390",
+   "check": "detail-h1",
+   "ok": true,
+   "detail": "Yoga Private di Rumah"
+  },
+  {
+   "engine": "firefox",
+   "viewport": "mobile390",
+   "check": "detail-map",
+   "ok": true,
+   "detail": "{\"hasL\":true,\"cls\":true}"
+  },
+  {
+   "engine": "firefox",
+   "viewport": "mobile390",
+   "check": "login-copy-id",
+   "ok": true,
+   "detail": " Email Kata Sandi Ingat saya Lupa kata sandi? Masuk atau Masuk dengan Google "
+  },
+  {
+   "engine": "firefox",
+   "viewport": "mobile390",
+   "check": "hamburger-visible",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "engine": "firefox",
+   "viewport": "mobile390",
+   "check": "hamburger-open",
+   "ok": true,
+   "detail": "links=4"
+  },
+  {
+   "engine": "firefox",
+   "viewport": "mobile390",
+   "check": "hamburger-close",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "engine": "firefox",
+   "viewport": "mobile390",
+   "check": "filter-toggle",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "engine": "firefox",
+   "viewport": "mobile390",
+   "check": "no-page-errors",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "engine": "webkit",
+   "viewport": "desktop1280",
+   "check": "home-load",
+   "ok": true,
+   "detail": "DekatSini - Temukan Layanan Terbaik di Sekitarmu"
+  },
+  {
+   "engine": "webkit",
+   "viewport": "desktop1280",
+   "check": "services-cards",
+   "ok": true,
+   "detail": "cards=12"
+  },
+  {
+   "engine": "webkit",
+   "viewport": "desktop1280",
+   "check": "sort-select",
+   "ok": true,
+   "detail": "selects=2"
+  },
+  {
+   "engine": "webkit",
+   "viewport": "desktop1280",
+   "check": "detail-h1",
+   "ok": true,
+   "detail": "Yoga Private di Rumah"
+  },
+  {
+   "engine": "webkit",
+   "viewport": "desktop1280",
+   "check": "detail-map",
+   "ok": true,
+   "detail": "{\"hasL\":true,\"cls\":true}"
+  },
+  {
+   "engine": "webkit",
+   "viewport": "desktop1280",
+   "check": "login-copy-id",
+   "ok": true,
+   "detail": " Email Kata Sandi Ingat saya Lupa kata sandi? Masuk atau Masuk dengan Google "
+  },
+  {
+   "engine": "webkit",
+   "viewport": "desktop1280",
+   "check": "hamburger-hidden-desktop",
+   "ok": true,
+   "detail": "visible=false"
+  },
+  {
+   "engine": "webkit",
+   "viewport": "desktop1280",
+   "check": "filter-btn-hidden-desktop",
+   "ok": true,
+   "detail": "visible=false"
+  },
+  {
+   "engine": "webkit",
+   "viewport": "desktop1280",
+   "check": "no-page-errors",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "engine": "webkit",
+   "viewport": "mobile390",
+   "check": "home-load",
+   "ok": true,
+   "detail": "DekatSini - Temukan Layanan Terbaik di Sekitarmu"
+  },
+  {
+   "engine": "webkit",
+   "viewport": "mobile390",
+   "check": "services-cards",
+   "ok": true,
+   "detail": "cards=12"
+  },
+  {
+   "engine": "webkit",
+   "viewport": "mobile390",
+   "check": "sort-select",
+   "ok": true,
+   "detail": "selects=2"
+  },
+  {
+   "engine": "webkit",
+   "viewport": "mobile390",
+   "check": "detail-h1",
+   "ok": true,
+   "detail": "Yoga Private di Rumah"
+  },
+  {
+   "engine": "webkit",
+   "viewport": "mobile390",
+   "check": "detail-map",
+   "ok": true,
+   "detail": "{\"hasL\":true,\"cls\":true}"
+  },
+  {
+   "engine": "webkit",
+   "viewport": "mobile390",
+   "check": "login-copy-id",
+   "ok": true,
+   "detail": " Email Kata Sandi Ingat saya Lupa kata sandi? Masuk atau Masuk dengan Google "
+  },
+  {
+   "engine": "webkit",
+   "viewport": "mobile390",
+   "check": "hamburger-visible",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "engine": "webkit",
+   "viewport": "mobile390",
+   "check": "hamburger-open",
+   "ok": true,
+   "detail": "links=4"
+  },
+  {
+   "engine": "webkit",
+   "viewport": "mobile390",
+   "check": "hamburger-close",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "engine": "webkit",
+   "viewport": "mobile390",
+   "check": "filter-toggle",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "engine": "webkit",
+   "viewport": "mobile390",
+   "check": "no-page-errors",
+   "ok": true,
+   "detail": ""
+  }
+ ]
+}

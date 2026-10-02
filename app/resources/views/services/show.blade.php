@@ -63,9 +63,22 @@ function logLead(channel){
   var message = el ? el.value : '';
   fetch('/leads',{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-TOKEN':'{{ csrf_token() }}'},body:JSON.stringify({service_id:{{ $service->id }},channel:channel,message:message})});
 }
-var map = L.map('map').setView([{{ $service->latitude }}, {{ $service->longitude }}], 14);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'OSM'}).addTo(map);
-L.marker([{{ $service->latitude }}, {{ $service->longitude }}]).addTo(map);
+function initMap(){
+  var map = L.map('map').setView([{{ $service->latitude }}, {{ $service->longitude }}], 14);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'OSM'}).addTo(map);
+  L.marker([{{ $service->latitude }}, {{ $service->longitude }}]).addTo(map);
+}
+var ready = 0;
+function leafletReady(){ if (++ready === 2) initMap(); }
+var leafletCss = document.createElement('link');
+leafletCss.rel = 'stylesheet';
+leafletCss.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+leafletCss.onload = leafletReady;
+document.head.appendChild(leafletCss);
+var leafletJs = document.createElement('script');
+leafletJs.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+leafletJs.onload = leafletReady;
+document.body.appendChild(leafletJs);
 </script>
 @endpush
 @endsection

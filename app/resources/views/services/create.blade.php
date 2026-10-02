@@ -30,12 +30,25 @@
 </div>
 @push('scripts')
 <script>
-var map = L.map('map').setView([-6.26, 106.81], 12);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'OSM'}).addTo(map);
-var m = L.marker([-6.26,106.81],{draggable:true}).addTo(map);
-function sync(v){document.getElementById('lat').value=v.lat.toFixed(6);document.getElementById('lng').value=v.lng.toFixed(6);}
-map.on('click',e=>{m.setLatLng(e.latlng);sync(e.latlng);});
-m.on('dragend',()=>sync(m.getLatLng()));
+function initMap(){
+  var map = L.map('map').setView([-6.26, 106.81], 12);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'OSM'}).addTo(map);
+  var m = L.marker([-6.26,106.81],{draggable:true}).addTo(map);
+  function sync(v){document.getElementById('lat').value=v.lat.toFixed(6);document.getElementById('lng').value=v.lng.toFixed(6);}
+  map.on('click',e=>{m.setLatLng(e.latlng);sync(e.latlng);});
+  m.on('dragend',()=>sync(m.getLatLng()));
+}
+var ready = 0;
+function leafletReady(){ if (++ready === 2) initMap(); }
+var leafletCss = document.createElement('link');
+leafletCss.rel = 'stylesheet';
+leafletCss.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+leafletCss.onload = leafletReady;
+document.head.appendChild(leafletCss);
+var leafletJs = document.createElement('script');
+leafletJs.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+leafletJs.onload = leafletReady;
+document.body.appendChild(leafletJs);
 </script>
 @endpush
 @endsection

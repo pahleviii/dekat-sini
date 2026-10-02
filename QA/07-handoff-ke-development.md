@@ -79,8 +79,8 @@ Perintah verifikasi: dari folder `app/` → `php artisan test --compact` (target
 | # | Poin | Status (setelah balasan dev + V1) |
 |---|---|---|
 | 1 | **Nav mobile:** link `hidden md:flex` tanpa hamburger di < 768px | ✅ **Dikerjakan dev** — hamburger Alpine di `layouts/app.blade.php` (`x-cloak` anti-flash, `aria-expanded`, cabang `@auth` + form logout `@csrf`); diverifikasi QA E2E di 390px & desktop (lihat bagian 6) |
-| 2 | **Performa:** Lighthouse LCP mobile < 2,5 dtk | ⏳ Ditunda — butuh staging terpublikasi (prasyarat rilis publik) |
-| 3 | **Cross-browser:** smoke test Safari/Firefox + device nyata | ⏳ Ditunda — prasyarat rilis publik |
+| 2 | **Performa:** Lighthouse LCP mobile < 2,5 dtk | ✅ **Diselesaikan QA (B1)** — 3 halaman PASS: 1518/1515/1653 ms (skor 99/99/99), BUG-020 diperbaiki & ditutup. Ukur ulang saat staging terpublikasi. Detail: `QA/06` bagian 9 |
+| 3 | **Cross-browser:** smoke test Safari/Firefox + device nyata | ⚠️ **Sebagian (B2)** — Playwright **60/60 PASS** (Chromium/Firefox/WebKit × 1280/390px). **Sisa manual:** Safari resmi (butuh Mac/iOS) + 1 device fisik nyata — ceklis di `QA/06` bagian 9 |
 | 4 | **CI:** MySQL service agar `php artisan test` jalan otomatis | ⚠️ Sebagian — workflow dibuat dev, **tapi lokasi `.github` vs `working-directory` tidak konsisten** + repo git belum di-init (lihat bagian 6) |
 | 5 | **Review data demo:** 12 listing / 0 lead di DB dev | ✅ Bersih — diverifikasi QA (12 jasa / 0 lead / 0 view); `db:seed` hanya bila perlu kondisi awal |
 
@@ -105,3 +105,5 @@ Perintah verifikasi: dari folder `app/` → `php artisan test --compact` (target
 | Lighthouse & cross-browser ditunda | Disetujui — tetap prasyarat rilis publik | ⏳ |
 
 **Kesimpulan V1: tidak ada veto.** Detail lengkap: `QA/06-laporan-kualitas.md` bagian 8. Bukti screenshot: `QA/evidence/handoff-*.png`.
+
+> **Update V2 (2026-10-02):** bagian A **SELESAI semua & diverifikasi QA** — repo `pahleviii/dekat-sini` ter-push (A1 Opsi A), step `APP_KEY` sukses di CI (A2), **run #2 SUCCESS 58s** setelah dev fix locale `APP_LOCALE=id` (A3). QA rerun lokal: 89/89. Sisa hanya bagian **B1 (Lighthouse staging)** dan **B2 (cross-browser/device)** — prasyarat rilis. Detail: `QA/08-perintah-perbaikan-dev.md`.

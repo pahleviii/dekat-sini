@@ -12,11 +12,11 @@
 | Test otomatis dieksekusi (Round 1) | 89 (64 TC QA + 24 baseline + 1 profil) |
 | Lulus Round 1 | 70 |
 | Gagal Round 1 | 18 FAIL + 1 error test |
-| **Bug aplikasi ditemukan** | **19** (BUG-001 … BUG-019) |
+| **Bug aplikasi ditemukan** | **20** (BUG-001 … BUG-020) |
 | Defek artefak test (bukan aplikasi) | 2 (TD-001, TD-002) |
-| Critical / Major / Minor | 4 / 12 / 3 |
-| Bug Fixed & retest PASS | **19 dari 19** |
-| Sumber temuan | 17 dari pengujian otomatis Round 1 · 1 dari UAT manual (TC-G05) · 1 dari verifikasi handoff (BUG-019) |
+| Critical / Major / Minor | 4 / 12 / 4 |
+| Bug Fixed & retest PASS | **20 dari 20** |
+| Sumber temuan | 17 dari pengujian otomatis Round 1 · 1 dari UAT manual (TC-G05) · 1 dari verifikasi handoff (BUG-019) · 1 dari pengukuran performa B1 (BUG-020) |
 
 **Severity:** **Critical** = merusak alur inti/keamanan · **Major** = melanggar PRD/kebutuhan bisnis · **Minor** = kualitas teknis.
 
@@ -45,6 +45,7 @@
 | BUG-017 | TC-F06 | F Security | Critical | Lead bisa dibuat untuk listing **pending/paused** (pelanggaran integritas data) | ✅ Fixed, retest PASS |
 | BUG-018 | TC-G05 | G UAT (manual) | Major | Responsif 390px: panel filter tersembunyi tanpa tombol toggle — filter tidak terjangkau di mobile | ✅ Fixed, retest PASS |
 | BUG-019 | — (review handoff) | Build/aset | Minor | Aset build CSS stale — kelas `md:hidden` hilang → tombol mobile (☰ nav & ⚙ Buka Filter) tampil juga di desktop | ✅ Fixed, retest PASS |
+| BUG-020 | — (ukuran B1) | Performa | Major | LCP mobile melebihi target 2,5 dtk: home 2656 ms · services 3314 ms · detail 2908 ms — rantai render-blocking (CSS Google Fonts + Leaflet & JS sync di semua/ halaman peta) | ✅ Fixed, retest PASS |
 
 \* TC-C04 lolos di Round 1 dengan asersi lemah (pesan mentah `auth.failed` lolos pemeriksaan bahasa); test diperkuat dan bug digabung ke lingkup BUG-007.
 
@@ -174,6 +175,18 @@
 - **Catatan koreksi dokumen:** klaim "desktop ≥768px tidak berubah" pada catatan retest BUG-018 baru **benar setelah** perbaikan ini — sebelumnya tombol filter sebenarnya ikut tampil di desktop (tidak terverifikasi saat itu).
 - **Bukti:** `QA/evidence/handoff-desktop-tanpa-tombol-mobile.png`, `QA/evidence/handoff-nav-mobile-terbuka.png`
 
+### BUG-020 — LCP mobile melebihi target 2,5 dtk (Major)
+- **Sumber:** pengukuran B1 (Lighthouse mobile, simulated throttling) · **Modul:** performa/aset · **Tanpa TC** (metrik dari `QA/01-analisis`)
+- **Gejala (sebelum fix):** home **2656 ms** (skor 84), `/services` **3314 ms** (skor 83), detail jasa **2908 ms** (skor 90) — ketiga > target 2500 ms. FCP ≈ LCP → catatan pertama terblokir.
+- **Akar penyebab:** rantai render-blocking di `<head>` layout: CSS `fonts.googleapis.com` (823–1482 ms) + `unpkg leaflet.css` (823–866 ms) **di semua halaman**, serta `leaflet.js` sinkron — padahal Leaflet hanya dipakai 2 halaman (`show`, `create`). Bonus: CLS home 0.172 akibat swap font Inter (metrik ≠ fallback).
+- **Perbaikan (QA):**
+  1. Google Fonts → async (`media="print" onload` + `preconnect` + fallback `<noscript>`);
+  2. Leaflet dikeluarkan dari layout → diinjeksikan **dinamis oleh halaman yang memakainya** (CSS+JS via `createElement` setelah paint, map di-init setelah keduanya siap);
+  3. Fallback font `Inter Fallback` dgn `size-adjust/ascent-override` agar swap tak menggeser layout (CLS).
+- **Retest B1:** home **1518 ms** (skor 99, CLS 0.001) · services **1515 ms** (skor 99, CLS 0) · detail **1653 ms** (skor 99, CLS 0.000) — **semua PASS < 2500 ms**, render-blocking bersih. Peta tetap jalan (browser: `leaflet-container` + tile; Playwright: cek `detail-map` lolos di 3 mesin). Regresi otomatis **89/89 PASS · 388 asersi**.
+- **Catatan:** pengukuran di server lokal dgn simulated throttling — saat staging terpublikasi, ukur ulang (TTFB produksi menambah ~100–300 ms; margin saat ini ±850 ms masih longgar).
+- **Bukti:** `QA/evidence/lighthouse-{home,services,detail}-{before,after}.json`
+
 ---
 
 ## 4. Defek Artefak Test (bukan bug aplikasi)
@@ -187,4 +200,4 @@
 
 ## 5. Status
 
-Seluruh **19 bug aplikasi** (BUG-001 … BUG-019) telah diperbaiki dan diverifikasi ulang. Ringkasan retest: `QA/05-hasil-retest.md`.
+Seluruh **20 bug aplikasi** (BUG-001 … BUG-020) telah diperbaiki dan diverifikasi ulang. Ringkasan retest: `QA/05-hasil-retest.md`.
